@@ -32,13 +32,14 @@ export class Input {
     // Id: Atributo Id
     // Option: Las opciones que tendra el selector;
     //Content: Nombre de la 
-    mSelect(id, options, content) {
+    mSelect(id, options, content, width) {
         let div = this.div;
         let label = this.label;
         let select = this.select;
         label.setAttribute("for", id);
         label.textContent = content;
         div.className = "input-group";
+	div.style.width = width;
         select.className = "custom-select selectpicker m-2 border-0 ";
         select.id = id;
         options.forEach((element, index) => {
@@ -48,7 +49,7 @@ export class Input {
         });
         div.appendChild(label);
         div.appendChild(select);
-        return (select)
+        return (div)
     }
 
     mTextarea(form, content) {
@@ -60,7 +61,7 @@ export class Input {
         div.appendChild(label);
         div.appendChild(text).className = "w-100 form-control";
         form.appendChild(div).className = "w-100 m-2 order-last";
-        return (text);
+        return (div);
     }
 
     mSubmit(type, id, color, content, form, value) {
