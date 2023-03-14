@@ -11,7 +11,7 @@ export class Input {
     }
 
     //Crea un input donde se pasa el ID, CONTENIDO DE LA ETIQUETA Y LA LISTA DE CLASES QUE SE QUIERAN AGREGAR AL INPUT
-    mInputBox(id, content, width, clase) {
+    mInputBox(id, content, width, name, clase) {
         let types = this.type;
         let input = this.input
         let div = this.div;
@@ -21,6 +21,7 @@ export class Input {
         label.textContent = content;
         input.setAttribute("id", id);
         input.type = types;
+	    input.setAttribute("name", name);
         div.appendChild(label);
         div.appendChild(input);
         div.className = "form-group m-2";
@@ -32,7 +33,7 @@ export class Input {
     // Id: Atributo Id
     // Option: Las opciones que tendra el selector;
     //Content: Nombre de la 
-    mSelect(id, options, content, width) {
+    mSelect(id, options, content, width, name) {
         let div = this.div;
         let label = this.label;
         let select = this.select;
@@ -42,6 +43,7 @@ export class Input {
 	div.style.width = width;
         select.className = "custom-select selectpicker m-2 border-0 ";
         select.id = id;
+	    select.setAttribute("name", name);
         options.forEach((element, index) => {
             let option = select.appendChild(document.createElement("option"));
             option.value = index;
