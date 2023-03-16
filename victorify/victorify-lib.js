@@ -141,23 +141,3 @@ export class Grid {
     }
 
 }
-
-
-export class addons {
-    constructor() {
-
-    }
-
-    create() {
-
-    }
-
-    delete() {
-
-    }
-
-    modify() {
-
-    }
-
-}
